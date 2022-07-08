@@ -5,7 +5,7 @@ import "./populate.js"
 import {ethers} from 'ethers'
 
 async function newDecision() {
-  const decision = document.getElementById("textfordecision").innerHTML;
+  const decision = document.getElementById("textfordecision").value;
   await ethereum.request({ method: 'eth_requestAccounts' });
   const signer = provider.getSigner();
   const contract = new ethers.Contract(address, Voting.abi, signer);
