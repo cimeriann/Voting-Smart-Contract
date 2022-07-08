@@ -1,8 +1,8 @@
-const provider = new ethers.providers.Web3Provider(window.ethereum);
 import {address} from './__config';
 import Voting from '../artifacts/contracts/Voting.sol/Voting';
 import "./populate.js"
 import {ethers} from 'ethers'
+const provider = new ethers.providers.Web3Provider(window.ethereum);
 
 async function newDecision() {
   const decision = document.getElementById("textfordecision").value;

@@ -55,4 +55,4 @@ function addListeners(id) {
   });
 }
 
-populateDecisions();
+document.getElementById('populatedecisions').addEventListener("click", populateDecisions);
