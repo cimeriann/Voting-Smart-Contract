@@ -16,6 +16,8 @@ async function populateDecisions() {
   renderDecisions();
   listenForDecisions();
 }
+document.getElementById('populatedecisions').addEventListener("click", populateDecisions);
+
 
 async function listenForDecisions() {
   const contract = new ethers.Contract(address, Voting.abi, provider);
@@ -35,7 +37,7 @@ async function listenForDecisions() {
 
 function renderDecisions() {
   const paragraph = document.getElementById("displaydecisions");
-  paragraph.innerHTML = decisions.map(buildDecision).join("");
+  paragraph.innerHTML = decisions.map(decision => buildDecision({decision})).join("");
   decisions.forEach((decision, id) => {
     addListeners(id);
   });
@@ -55,4 +57,3 @@ function addListeners(id) {
   });
 }
 
-document.getElementById('populatedecisions').addEventListener("click", populateDecisions);
