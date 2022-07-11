@@ -34,7 +34,6 @@ async function listenForDecisions() {
     renderDecisions();
   });
 }
-
 function renderDecisions() {
   const paragraph = document.getElementById("displaydecisions");
   paragraph.innerHTML = decisions.map(decision => buildDecision({decision})).join("");
