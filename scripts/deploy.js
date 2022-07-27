@@ -16,8 +16,7 @@ async function main() {
   fs.writeFileSync("./app/__config.json", JSON.stringify(config, null, 2));
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
+
 main()
   .then(() => process.exit(0))
   .catch(error => {
